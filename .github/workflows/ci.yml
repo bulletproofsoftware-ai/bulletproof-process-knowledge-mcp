@@ -20,11 +20,9 @@ jobs:
       - name: Syntax check (compile all Python)
         run: |
           python -m compileall -q $(git ls-files '*.py') || python -m compileall -q .
-      - name: Tests (if present, non-blocking on missing services)
+      # tests/test_offline.py needs no Qdrant, no network and no embedding
+      # model, so failures FAIL the build.
+      - name: Tests
         run: |
-          if [ -d tests ] || ls test_*.py *_test.py 2>/dev/null | grep -q .; then
-            pip install pytest 2>/dev/null || true
-            pytest -q || echo "::warning::pytest reported failures (may require external services)"
-          else
-            echo "no tests directory — skipping"
-          fi
+          pip install pytest
+          pytest -q

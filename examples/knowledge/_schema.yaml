@@ -1,0 +1,81 @@
+# Process-knowledge schema.
+#
+# `process_validate` reads this file (path from SCHEMA_PATH) and, for the
+# candidate's `knowledge_type`, checks that every name listed under that type's
+# `required_fields` is present on the candidate. Anything not listed here is
+# permitted but unchecked.
+#
+# The four knowledge types below are the ones server.py can infer from a
+# candidate's shape (see `_infer_type`), so keep these names as they are:
+#
+#   rule           inferred when both `condition` and `action` are present
+#   decision_tree  inferred when `root` is a mapping
+#   sop            inferred when `steps` is a list
+#   edge_case      inferred when `scenario`, `standard_behavior` and
+#                  `exception` are all present
+
+version: "1.0"
+
+knowledge_types:
+
+  rule:
+    description: >-
+      A single condition/action pair. The most common record type: "when X
+      holds, do Y".
+    required_fields:
+      - id
+      - name
+      - domain
+      - condition
+      - action
+      - source
+      - effective_date
+      - status
+
+  decision_tree:
+    description: >-
+      A branching decision procedure. `root` is a nested mapping of
+      question/branch nodes.
+    required_fields:
+      - id
+      - name
+      - domain
+      - root
+      - source
+      - effective_date
+      - status
+
+  sop:
+    description: >-
+      A standard operating procedure — an ordered list of steps to carry out.
+    required_fields:
+      - id
+      - name
+      - domain
+      - steps
+      - source
+      - effective_date
+      - status
+
+  edge_case:
+    description: >-
+      A documented exception to normal behaviour: what usually happens, and
+      when it does not.
+    required_fields:
+      - id
+      - name
+      - domain
+      - scenario
+      - standard_behavior
+      - exception
+      - source
+      - effective_date
+      - status
+
+# Informational only — not enforced by the server. Listed so authors use a
+# consistent vocabulary.
+status_values:
+  - active
+  - draft
+  - deprecated
+  - superseded

@@ -27,7 +27,7 @@ separate pipeline; this server is the query/guard surface in front of it.
 ```
 ┌────────────────┐   MCP (stdio)   ┌──────────────────────────┐   HTTP REST   ┌──────────┐
 │  MCP host       │ ─────────────▶ │ process-knowledge-mcp     │ ────────────▶ │  Qdrant   │
-│ (Claude, etc.)  │ ◀───────────── │  (server.py)              │ ◀──────────── │  :6334    │
+│ (Claude, etc.)  │ ◀───────────── │  (server.py)              │ ◀──────────── │  :6333    │
 └────────────────┘   tool results  └──────────────────────────┘   search/scroll└──────────┘
                                           │
                                           │ optional POST (fire-and-forget)

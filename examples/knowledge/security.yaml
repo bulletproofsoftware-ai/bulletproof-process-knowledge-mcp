@@ -1,0 +1,66 @@
+# Example knowledge records for the `security` domain.
+#
+# Every record needs the fields its knowledge_type lists in _schema.yaml.
+# `domain` is a dotted string; the part before the first dot is the root domain
+# that process_validate scopes duplicate checks against.
+
+records:
+
+  - id: SEC-CIS-001
+    knowledge_type: rule
+    name: Disable root SSH login
+    domain: security.cis_controls
+    condition: A host exposes SSH to any network
+    action: >-
+      Set PermitRootLogin to "no" in sshd_config and authenticate as an
+      unprivileged user, escalating with sudo.
+    tags: [ssh, hardening, cis]
+    source: CIS Benchmark
+    effective_date: "2026-01-15"
+    status: active
+
+  - id: SEC-CIS-002
+    knowledge_type: rule
+    name: Require key-based SSH authentication
+    domain: security.cis_controls
+    condition: An SSH server accepts password authentication
+    action: >-
+      Set PasswordAuthentication to "no" and distribute public keys to
+      authorized users.
+    tags: [ssh, hardening, cis]
+    source: CIS Benchmark
+    effective_date: "2026-01-15"
+    status: active
+
+  - id: SEC-IR-001
+    knowledge_type: sop
+    name: Credential leak response
+    domain: security.incident_response
+    steps:
+      - Revoke the exposed credential at the issuing provider.
+      - Rotate any credential derived from or sharing a secret with it.
+      - Search access logs for use of the credential before revocation.
+      - Record the exposure window and affected systems in the incident record.
+      - Purge the credential from version-control history if it was committed.
+    tags: [secrets, incident-response]
+    source: Internal runbook
+    effective_date: "2026-02-01"
+    status: active
+
+  - id: SEC-EDGE-001
+    knowledge_type: edge_case
+    name: Break-glass account retains password authentication
+    domain: security.cis_controls
+    scenario: >-
+      A single documented break-glass account exists for recovering hosts when
+      the key-distribution system is unavailable.
+    standard_behavior: >-
+      SEC-CIS-002 requires password authentication to be disabled everywhere.
+    exception: >-
+      The break-glass account may keep password authentication if the password
+      is held in escrow, its use raises an alert, and access is reviewed
+      quarterly.
+    tags: [ssh, exception, cis]
+    source: Internal policy
+    effective_date: "2026-02-10"
+    status: active

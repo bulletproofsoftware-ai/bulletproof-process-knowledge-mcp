@@ -10,7 +10,7 @@ class at import time (`server.py`).
 
 | Env var | Default | Purpose |
 |---------|---------|---------|
-| `QDRANT_URL` | `http://localhost:6334` | Qdrant HTTP REST base URL. (The Docker image overrides this to `http://qdrant:6333`.) |
+| `QDRANT_URL` | `http://localhost:6333` | Qdrant HTTP REST base URL. (The Docker image overrides this to `http://qdrant:6333`.) |
 | `QDRANT_API_KEY` | _(none)_ | Sent as the `api-key` header on every Qdrant request when set. |
 | `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Sentence-transformers model used to embed queries (384-dim). |
 | `SCHEMA_PATH` | `/knowledge/_schema.yaml` | YAML schema used by `process_validate`. |
@@ -18,9 +18,9 @@ class at import time (`server.py`).
 | `AUDIT_BUS_URL` | _(none)_ | If set, tool invocations are POSTed here as audit events. |
 | `DUPLICATE_THRESHOLD` | `0.85` | Cosine score at/above which `process_validate` flags a potential duplicate. |
 
-> The `QDRANT_URL` default (`:6334`) matches a REST endpoint on the operator's
-> Qdrant. Docker deployments talk to the Qdrant service on `:6333`. Set this
-> explicitly for your environment rather than relying on the default.
+> `:6333` is Qdrant's default HTTP REST port (`:6334` is its gRPC port, which
+> this server does not use). Set `QDRANT_URL` explicitly for your environment
+> rather than relying on the default.
 
 ## The `process_knowledge` collection
 
@@ -33,9 +33,25 @@ payload is expected to carry at least:
 - `knowledge_type`, `name`, `status`, `tags`, `source_file`, `record`
 
 Point IDs are deterministic UUID5 values from
-`process_knowledge://{domain}/{record_id}`. **Ingestion is out of scope for this
-server** — it never writes to the collection. Provisioning and populating
-`process_knowledge` is done by a separate pipeline.
+`process_knowledge://{domain}/{record_id}`, using the namespace UUID
+`c0c0c0c0-c0c0-c0c0-c0c0-c0c0c0c0c0c0`.
+
+**This server never writes to the collection.** Provisioning and population are
+handled by [`ingest.py`](../ingest.py) in this repository, which creates the
+collection with the expected vector configuration (384-dim, Cosine), adds
+keyword payload indexes on `id` and `domain`, and upserts records from YAML:
+
+```bash
+python ingest.py --knowledge-root examples/knowledge --dry-run   # plan only
+python ingest.py --knowledge-root examples/knowledge             # write
+python ingest.py --knowledge-root examples/knowledge --recreate  # rebuild
+```
+
+Because point ids are deterministic, re-ingesting an unchanged `{domain}/{id}`
+updates that record in place rather than duplicating it. A worked sample corpus
+and schema live in [`examples/knowledge/`](../examples/knowledge/). The
+offline test suite asserts that `ingest.py` derives point ids identically to
+this server, so the two cannot silently drift apart.
 
 ## Audit events (optional)
 

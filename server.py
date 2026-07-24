@@ -10,7 +10,7 @@ Exposes three MCP tools backed by the `process_knowledge` Qdrant collection:
 Transport: stdio (MCP standard).
 
 Configuration via environment variables:
-    QDRANT_URL          (default http://localhost:6334)
+    QDRANT_URL          (default http://localhost:6333)
     QDRANT_API_KEY      (optional)
     EMBEDDING_MODEL     (default sentence-transformers/all-MiniLM-L6-v2)
     SCHEMA_PATH         (default /knowledge/_schema.yaml)
@@ -58,7 +58,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 # Configuration
 # ---------------------------------------------------------------------------
 class Config:
-    QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6334")
+    QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
     QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY") or None
     EMBEDDING_MODEL = os.environ.get(
         "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"

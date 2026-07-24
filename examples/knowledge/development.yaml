@@ -1,0 +1,38 @@
+# Example knowledge records for the `development` domain.
+
+records:
+
+  - id: DEV-TEST-001
+    knowledge_type: rule
+    name: Sanitization changes require a test run
+    domain: development.testing
+    condition: A change rewrites text across source files (a scrub or rename)
+    action: >-
+      Run the full test suite afterwards. Text rewrites can silently change
+      string literals that tests assert on.
+    tags: [testing, refactoring]
+    source: Internal retrospective
+    effective_date: "2026-03-01"
+    status: active
+
+  - id: DEV-REL-001
+    knowledge_type: decision_tree
+    name: Choosing a release type
+    domain: development.release
+    root:
+      question: Does the change alter a public interface?
+      branches:
+        yes:
+          question: Is the alteration backwards compatible?
+          branches:
+            yes: Release a minor version.
+            no: Release a major version.
+        no:
+          question: Does the change fix incorrect behaviour?
+          branches:
+            yes: Release a patch version.
+            no: Hold the change for the next scheduled release.
+    tags: [release, semver]
+    source: Internal policy
+    effective_date: "2026-03-05"
+    status: active

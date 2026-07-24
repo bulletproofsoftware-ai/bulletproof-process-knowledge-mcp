@@ -111,7 +111,7 @@ Add one of the following to your host's MCP config (e.g. `mcp.json`).
     "command": "python",
     "args": ["/path/to/bulletproof-process-knowledge-mcp/server.py"],
     "env": {
-      "QDRANT_URL": "http://localhost:6334",
+      "QDRANT_URL": "http://localhost:6333",
       "QDRANT_API_KEY": "<secret>",
       "SCHEMA_PATH": "/path/to/knowledge/_schema.yaml"
     }
