@@ -1,4 +1,4 @@
-# process-knowledge-mcp
+# bulletproof-process-knowledge-mcp
 
 MCP server exposing the `process_knowledge` Qdrant collection through three tools:
 
