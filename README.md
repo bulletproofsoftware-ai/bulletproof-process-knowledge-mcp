@@ -2,6 +2,10 @@
 
 MCP server exposing the `process_knowledge` Qdrant collection through three tools:
 
+![bulletproof-process-knowledge-mcp — overview](docs/media/infographic.png)
+
+> Deep-dive docs live in [`docs/`](docs/); generated media (infographic, slide deck, video overview, briefing report) live in [`docs/media/`](docs/media/).
+
 | Tool | Purpose |
 |------|---------|
 | `process_query` | Semantic search over the process knowledge base |
