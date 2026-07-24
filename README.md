@@ -1,6 +1,6 @@
 # process-knowledge-mcp
 
-PRD 14 REQ-PK-005 — MCP server exposing the `process_knowledge` Qdrant collection through three tools:
+MCP server exposing the `process_knowledge` Qdrant collection through three tools:
 
 | Tool | Purpose |
 |------|---------|
@@ -72,8 +72,7 @@ Or stdio direct:
 }
 ```
 
-## PRD Mapping
-- **REQ-PK-004** Dedicated Qdrant collection — `process_knowledge` (created by `bulletproofsoftware-completion/scripts/setup_process_knowledge_qdrant.py`, populated by `ingest_process_knowledge.py`)
-- **REQ-PK-005** Three MCP tools — `process_query`, `process_lookup`, `process_validate`
 
-Auditing: every tool invocation can be POSTed to `AUDIT_BUS_URL` for compliance trail (failure-tolerant — never blocks the tool response).
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
