@@ -288,9 +288,14 @@ def tool_process_validate(raw: dict) -> dict:
     # Duplicate / contradiction detection via semantic similarity
     # Use root-domain prefix matching: if target is "security", we want to find
     # candidates in "security.cis_controls", "security.network", etc.
-    text = (cand.get("name", "") + " " + cand.get("condition", "") + " "
-            + cand.get("action", "") + " " + cand.get("scenario", "") + " "
-            + cand.get("standard_behavior", "")).strip()
+    # dict.get(key, "") returns None when the key is PRESENT with a null
+    # value — the default only covers a missing key — so concatenating these
+    # raised "TypeError: can only concatenate str" for any candidate carrying
+    # an explicit null. Coerce each field instead.
+    text = " ".join(
+        str(cand.get(field) or "")
+        for field in ("name", "condition", "action", "scenario", "standard_behavior")
+    ).strip()
     if text:
         try:
             # Search WITHOUT domain filter — duplicates can hide in any sub-domain
