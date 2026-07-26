@@ -301,3 +301,97 @@ class TestAuditOffline:
             server.Config, "AUDIT_BUS_URL", "http://127.0.0.1:1/bus", raising=False
         )
         server.audit("process_query", {"query": "x"}, "ok")  # must not raise
+
+
+# ---------------------------------------------------------------------------
+# q_lookup domain scoping (round-2 adversarial review)
+# ---------------------------------------------------------------------------
+
+
+class _FakeResponse:
+    """Minimal stand-in for requests.Response."""
+
+    def __init__(self, payload: dict, status_code: int = 200):
+        self._payload = payload
+        self.status_code = status_code
+
+    def json(self) -> dict:
+        return self._payload
+
+    def raise_for_status(self) -> None:
+        if self.status_code >= 400:
+            raise AssertionError(f"unexpected status {self.status_code}")
+
+
+def _point(record_id: str, domain: str) -> dict:
+    return {"id": f"pt-{record_id}-{domain}", "payload": {"id": record_id, "domain": domain}}
+
+
+@pytest.fixture()
+def scroll_only(server, monkeypatch):
+    """Force q_lookup down its scroll path and control what the scroll returns.
+
+    The UUID5 fast path is made to miss so every test exercises the post-filter,
+    which is where the domain constraint was being dropped.
+    """
+
+    def install(points: list[dict]):
+        monkeypatch.setattr(
+            server.requests, "get", lambda *a, **k: _FakeResponse({}, status_code=404)
+        )
+        monkeypatch.setattr(
+            server.requests,
+            "post",
+            lambda *a, **k: _FakeResponse({"result": {"points": points}}),
+        )
+
+    return install
+
+
+class TestQLookupDomainScoping:
+    """A caller-supplied domain is a constraint, not a hint.
+
+    q_lookup() used to fall through to points[0] whenever the domain post-filter
+    matched nothing, handing back a record from an unrelated domain under the
+    record id the caller asked for.
+    """
+
+    def test_returns_none_when_no_point_is_in_the_requested_root_domain(
+        self, server, scroll_only
+    ):
+        scroll_only([_point("REQ-001", "security"), _point("REQ-001", "finance")])
+        assert server.q_lookup("REQ-001", domain="engineering") is None
+
+    def test_returns_none_when_no_point_is_in_the_requested_dotted_domain(
+        self, server, scroll_only
+    ):
+        # Dotted domains skipped the post-filter entirely after the UUID5 miss.
+        scroll_only([_point("REQ-001", "security"), _point("REQ-001", "finance")])
+        assert server.q_lookup("REQ-001", domain="engineering.backend") is None
+
+    def test_returns_the_matching_domain_not_the_first_point(self, server, scroll_only):
+        scroll_only([_point("REQ-001", "finance"), _point("REQ-001", "engineering")])
+        result = server.q_lookup("REQ-001", domain="engineering")
+        assert result is not None
+        assert result["payload"]["domain"] == "engineering"
+
+    def test_sub_domains_still_satisfy_a_root_domain_request(self, server, scroll_only):
+        scroll_only([_point("REQ-001", "finance"), _point("REQ-001", "engineering.backend")])
+        result = server.q_lookup("REQ-001", domain="engineering")
+        assert result is not None
+        assert result["payload"]["domain"] == "engineering.backend"
+
+    def test_prefix_collision_does_not_count_as_a_match(self, server, scroll_only):
+        # "engineeringops" must not satisfy a request scoped to "engineering".
+        scroll_only([_point("REQ-001", "engineeringops")])
+        assert server.q_lookup("REQ-001", domain="engineering") is None
+
+    def test_no_domain_still_returns_the_first_point(self, server, scroll_only):
+        scroll_only([_point("REQ-001", "finance"), _point("REQ-001", "engineering")])
+        result = server.q_lookup("REQ-001")
+        assert result is not None
+        assert result["payload"]["domain"] == "finance"
+
+    def test_empty_scroll_returns_none(self, server, scroll_only):
+        scroll_only([])
+        assert server.q_lookup("REQ-001", domain="engineering") is None

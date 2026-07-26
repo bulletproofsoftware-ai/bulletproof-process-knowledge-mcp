@@ -146,12 +146,17 @@ def q_lookup(record_id: str, domain: str | None = None) -> dict | None:
     pts = r.json().get("result", {}).get("points", [])
     if not pts:
         return None
-    if domain and not any("." in domain for _ in [True]):
-        # Optional domain root filter (post-filter to avoid keyword-equality miss)
+    if domain:
+        # Post-filter rather than filter server-side, to avoid a keyword-equality
+        # miss on sub-domains. A caller-supplied domain is a constraint, not a
+        # preference: if nothing under it matches, the answer is None. Falling
+        # through to pts[0] handed back a record from an unrelated domain — the
+        # requested scope silently ignored.
         for p in pts:
             d = p.get("payload", {}).get("domain", "")
             if d == domain or d.startswith(domain + "."):
                 return p
+        return None
     return pts[0]
 
 
