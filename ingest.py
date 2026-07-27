@@ -67,10 +67,12 @@ def embed(text: str) -> list[float]:
     """Embed text with the same model and normalization the server uses."""
     global _embedder
     if _embedder is None:
-        from sentence_transformers import SentenceTransformer
+        from fastembed import TextEmbedding
 
-        _embedder = SentenceTransformer(EMBEDDING_MODEL)
-    return _embedder.encode(text, normalize_embeddings=True).tolist()
+        _embedder = TextEmbedding(model_name=EMBEDDING_MODEL)
+    # fastembed mean-pools and L2-normalizes internally, matching the server's
+    # previous SentenceTransformer(..., normalize_embeddings=True) output.
+    return next(iter(_embedder.embed([text]))).tolist()
 
 
 def point_id(domain: str, record_id: str) -> str:

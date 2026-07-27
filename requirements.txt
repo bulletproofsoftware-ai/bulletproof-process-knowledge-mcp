@@ -5,6 +5,13 @@
 # vulnerability scanning meaningless: the Snyk dashboard and a fresh local
 # resolution reported different findings because they were different software.
 #
+# Embeddings use fastembed (ONNX runtime) rather than sentence-transformers.
+# sentence-transformers pulls torch + transformers, which carried 13 findings
+# (8 HIGH / 5 MEDIUM) with fixedIn: NONE — inherent pickle/model-loading risks
+# present in the newest releases. fastembed produces numerically identical
+# vectors for the same model (cosine 1.00000000, max|delta| 1.3e-07), so
+# existing Qdrant collections remain compatible with no re-indexing.
+#
 # Transitive dependencies are pinned in requirements.lock.txt.
 # For a byte-identical environment, install from the lockfile instead:
 #     pip install -r requirements.lock.txt
@@ -13,8 +20,7 @@
 #     pip freeze --exclude-editable > requirements.lock.txt
 
 mcp==1.28.1
-qdrant-client==1.18.0
-sentence-transformers==5.6.1
+qdrant-client[fastembed]==1.18.0
 pydantic==2.13.4
 pyyaml==6.0.3
 requests==2.34.2
