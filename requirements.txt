@@ -1,6 +1,20 @@
-mcp>=1.0.0
-qdrant-client>=1.7.0
-sentence-transformers>=2.2.0
-pydantic>=2.0.0
-pyyaml>=6.0
-requests>=2.31.0
+# Direct dependencies, pinned for reproducible builds.
+#
+# Previously these were unpinned `>=` floors with no upper bound, so every
+# `pip install` resolved a different, unaudited dependency tree. That made
+# vulnerability scanning meaningless: the Snyk dashboard and a fresh local
+# resolution reported different findings because they were different software.
+#
+# Transitive dependencies are pinned in requirements.lock.txt.
+# For a byte-identical environment, install from the lockfile instead:
+#     pip install -r requirements.lock.txt
+#
+# To upgrade: change a pin here, reinstall, then regenerate the lockfile with
+#     pip freeze --exclude-editable > requirements.lock.txt
+
+mcp==1.28.1
+qdrant-client==1.18.0
+sentence-transformers==5.6.1
+pydantic==2.13.4
+pyyaml==6.0.3
+requests==2.34.2
