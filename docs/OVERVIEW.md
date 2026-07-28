@@ -39,9 +39,10 @@ separate pipeline; this server is the query/guard surface in front of it.
 
 - **Transport:** MCP over **stdio** (the MCP standard). The host launches the
   process and speaks JSON-RPC over stdin/stdout.
-- **Embeddings:** queries are embedded locally with a
-  [sentence-transformers](https://www.sbert.net) model
-  (`all-MiniLM-L6-v2`, 384 dimensions) — no external embedding API is called.
+- **Embeddings:** queries are embedded locally with
+  [fastembed](https://github.com/qdrant/fastembed) (ONNX runtime) using the
+  `all-MiniLM-L6-v2` model (384 dimensions) — no external embedding API is
+  called, and no `torch` dependency is required.
 - **Backend:** Qdrant's HTTP REST API (`points/search`, `points/scroll`,
   `points/{id}`). The server does not use a persistent SDK connection; each call
   is a stateless HTTP request.

@@ -9,7 +9,7 @@ The `bulletproof-process-knowledge-mcp` server provides a hardened, read-only in
 | Component | Technology | Implementation Detail |
 | :--- | :--- | :--- |
 | **Transport** | MCP stdio | Standard JSON-RPC over stdin/stdout for host communication. |
-| **Embeddings** | sentence-transformers | Local execution of `all-MiniLM-L6-v2` (384-dimensional vectors). |
+| **Embeddings** | fastembed (ONNX runtime) | Local execution of `all-MiniLM-L6-v2` (384-dimensional vectors). No `torch` dependency. |
 | **Backend** | Qdrant | Stateless interaction via HTTP REST API. Note: While `qdrant-client` is a declared dependency, the runtime uses the `requests` library for REST calls to maintain a lightweight footprint. |
 | **Validation** | Pydantic | Strict input modeling with length, range, and type constraints. |
 
@@ -165,7 +165,7 @@ Direct dependencies as of the current release:
 | :--- | :--- | :--- | :--- | :--- |
 | **mcp** | >= 1.0.0 | 1.28.1 | MIT | MCP SDK & stdio transport. |
 | **qdrant-client**| >= 1.7.0 | 1.18.0 | Apache-2.0 | Declared Qdrant dependency. |
-| **sentence-transformers** | >= 2.2.0 | 5.6.1 | Apache-2.0 | Local vectorization logic. |
+| **fastembed** (via `qdrant-client[fastembed]`) | pinned | 0.8.0 | Apache-2.0 | Local vectorization on ONNX runtime. |
 | **pydantic** | >= 2.0.0 | 2.13.4 | MIT | Data validation. |
 | **PyYAML** | >= 6.0 | 6.0.3 | MIT | Schema file parsing. |
 | **requests** | >= 2.31.0 | 2.34.2 | Apache-2.0 | Runtime REST communication. |

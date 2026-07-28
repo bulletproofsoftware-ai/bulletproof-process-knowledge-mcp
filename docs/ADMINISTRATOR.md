@@ -12,7 +12,7 @@ class at import time (`server.py`).
 |---------|---------|---------|
 | `QDRANT_URL` | `http://localhost:6333` | Qdrant HTTP REST base URL. (The Docker image overrides this to `http://qdrant:6333`.) |
 | `QDRANT_API_KEY` | _(none)_ | Sent as the `api-key` header on every Qdrant request when set. |
-| `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Sentence-transformers model used to embed queries (384-dim). |
+| `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Model served by `fastembed` (ONNX) to embed queries, 384-dim. The value is the HuggingFace model identifier and is unchanged from the previous sentence-transformers implementation — existing collections stay compatible. |
 | `SCHEMA_PATH` | `/knowledge/_schema.yaml` | YAML schema used by `process_validate`. |
 | `KNOWLEDGE_ROOT` | `/knowledge` | Source YAML root (read-only; informational). |
 | `AUDIT_BUS_URL` | _(none)_ | If set, tool invocations are POSTed here as audit events. |

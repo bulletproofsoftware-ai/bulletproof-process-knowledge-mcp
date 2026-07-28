@@ -90,8 +90,8 @@ your MCP host configuration or container environment, not on the command line.
 
 ### Not in scope
 
-- The security of Qdrant itself, or of the sentence-transformers model you
-  configure. Report those upstream.
+- The security of Qdrant itself, or of the embedding model you configure
+  (served via `fastembed`/ONNX runtime). Report those upstream.
 - Correctness or trustworthiness of the knowledge records you ingest.
 
 ## Security Practices in This Repository

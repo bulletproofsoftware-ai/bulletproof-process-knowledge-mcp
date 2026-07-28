@@ -26,15 +26,22 @@ waiting for a host. To exercise it without an MCP host, use the CLI test mode
 
 ### Direct dependencies
 
-From `requirements.txt` (floor pins; see [SBOM.md](SBOM.md) for resolved versions):
+From `requirements.txt` (exact pins; see [SBOM.md](SBOM.md) for the full tree):
 
 ```
-mcp>=1.0.0
-qdrant-client>=1.7.0
-sentence-transformers>=2.2.0
-pydantic>=2.0.0
-pyyaml>=6.0
-requests>=2.31.0
+mcp==1.28.1
+qdrant-client[fastembed]==1.18.0
+pydantic==2.13.4
+pyyaml==6.0.3
+requests==2.34.2
+```
+
+Embeddings come from the `fastembed` extra on `qdrant-client` (ONNX runtime —
+no `torch`). For a byte-identical environment install the full pinned tree
+instead:
+
+```bash
+pip install -r requirements.lock.txt   # 55 packages, all pinned
 ```
 
 > Note: the server talks to Qdrant over raw HTTP via `requests`; `qdrant-client`
