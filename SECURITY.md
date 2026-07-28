@@ -19,9 +19,12 @@ for 90 days for security fixes only.
 **Please do NOT open a public GitHub issue for security vulnerabilities.**
 Public disclosure before a fix is available puts users at risk.
 
-Report privately via a GitHub security advisory on this repository, or to the
-security contact of the organization operating your deployment
-(`security@<your-domain>`).
+Report privately via a GitHub security advisory on this repository
+(**Security** tab → **Report a vulnerability**), or email
+**marc@bulletproofsoftware.ai**.
+
+If you are running a deployment operated by someone else, report to that
+operator's security contact as well.
 
 Include:
 
