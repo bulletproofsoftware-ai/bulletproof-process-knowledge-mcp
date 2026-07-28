@@ -23,11 +23,21 @@
         {
           "name": "cdx:python:package:required-extra",
           "value": "crypto"
+        },
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pyjwt-2.13.0-py3-none-any.whl"
         }
       ],
       "purl": "pkg:pypi/pyjwt@2.13.0",
       "type": "library",
-      "version": "2.13.0"
+      "version": "2.13.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "66adcc2aff09b3f1bbd95fc1e1577df8ac8723c978552fd43304c8a290ac5728"
+        }
+      ]
     },
     {
       "bom-ref": "PyYAML==6.0.3",
@@ -80,7 +90,19 @@
       "name": "PyYAML",
       "purl": "pkg:pypi/pyyaml@6.0.3",
       "type": "library",
-      "version": "6.0.3"
+      "version": "6.0.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "214ed4befebe12df36bcc8bc2b64b396ca31be9304b8f59e25c11cf94a4c033b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pyyaml-6.0.3-cp310-cp310-macosx_10_13_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "annotated-types==0.8.0",
@@ -113,7 +135,19 @@
       "name": "annotated-types",
       "purl": "pkg:pypi/annotated-types@0.8.0",
       "type": "library",
-      "version": "0.8.0"
+      "version": "0.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:annotated_types-0.8.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "anyio==4.14.2",
@@ -151,7 +185,19 @@
       "name": "anyio",
       "purl": "pkg:pypi/anyio@4.14.2",
       "type": "library",
-      "version": "4.14.2"
+      "version": "4.14.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:anyio-4.14.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "attrs==26.1.0",
@@ -194,7 +240,19 @@
       "name": "attrs",
       "purl": "pkg:pypi/attrs@26.1.0",
       "type": "library",
-      "version": "26.1.0"
+      "version": "26.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:attrs-26.1.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "certifi==2026.7.22",
@@ -228,7 +286,19 @@
       "name": "certifi",
       "purl": "pkg:pypi/certifi@2026.7.22",
       "type": "library",
-      "version": "2026.7.22"
+      "version": "2026.7.22",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:certifi-2026.7.22-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "cffi==2.1.0",
@@ -276,7 +346,19 @@
       "name": "cffi",
       "purl": "pkg:pypi/cffi@2.1.0",
       "type": "library",
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b65f590ef2a44640f9a05dbb548a429b4ade77913ce683ac8b1480777658a6c0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:cffi-2.1.0-cp310-cp310-macosx_10_15_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "charset-normalizer==3.4.9",
@@ -314,7 +396,19 @@
       "name": "charset-normalizer",
       "purl": "pkg:pypi/charset-normalizer@3.4.9",
       "type": "library",
-      "version": "3.4.9"
+      "version": "3.4.9",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "68e5f26a1ad57ded6d1cfb85331d1c1a195314756471d97758c48498bb4dcdf5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:charset_normalizer-3.4.9-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "click==8.4.2",
@@ -357,7 +451,19 @@
       "name": "click",
       "purl": "pkg:pypi/click@8.4.2",
       "type": "library",
-      "version": "8.4.2"
+      "version": "8.4.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:click-8.4.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "cryptography==49.0.0",
@@ -398,7 +504,19 @@
       "name": "cryptography",
       "purl": "pkg:pypi/cryptography@49.0.0",
       "type": "library",
-      "version": "49.0.0"
+      "version": "49.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "966fe0e9c67490071f14c0d2b1cb2dfb3023c5ce39457343931415f08382f2db"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:cryptography-49.0.0-cp311-abi3-macosx_11_0_arm64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "fastembed==0.8.0",
@@ -426,7 +544,19 @@
       "name": "fastembed",
       "purl": "pkg:pypi/fastembed@0.8.0",
       "type": "library",
-      "version": "0.8.0"
+      "version": "0.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "40bee672657574a1009e35ec50030a55f2b426842cb011845379817641bbbbd0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:fastembed-0.8.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "filelock==3.32.0",
@@ -464,7 +594,19 @@
       "name": "filelock",
       "purl": "pkg:pypi/filelock@3.32.0",
       "type": "library",
-      "version": "3.32.0"
+      "version": "3.32.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d396bea984af47333ef05e50eae7eff88c84256de6112aea0ec48a233c064fe3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:filelock-3.32.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "flatbuffers==25.12.19",
@@ -497,7 +639,19 @@
       "name": "flatbuffers",
       "purl": "pkg:pypi/flatbuffers@25.12.19",
       "type": "library",
-      "version": "25.12.19"
+      "version": "25.12.19",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:flatbuffers-25.12.19-py2.py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "fsspec==2026.6.0",
@@ -530,7 +684,19 @@
       "name": "fsspec",
       "purl": "pkg:pypi/fsspec@2026.6.0",
       "type": "library",
-      "version": "2026.6.0"
+      "version": "2026.6.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "02e0b71817df9b2169dc30a16832045764def1191b43dcff5bb85bdee212d2a1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:fsspec-2026.6.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "grpcio==1.83.0",
@@ -568,7 +734,19 @@
       "name": "grpcio",
       "purl": "pkg:pypi/grpcio@1.83.0",
       "type": "library",
-      "version": "1.83.0"
+      "version": "1.83.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fba099b716e73512d61b97f71ea3c31a72abb36904036e316bf4dd148ca8dcc8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:grpcio-1.83.0-cp310-cp310-linux_armv7l.whl"
+        }
+      ]
     },
     {
       "bom-ref": "h11==0.16.0",
@@ -591,7 +769,19 @@
       "name": "h11",
       "purl": "pkg:pypi/h11@0.16.0",
       "type": "library",
-      "version": "0.16.0"
+      "version": "0.16.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:h11-0.16.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "h2==4.4.0",
@@ -629,7 +819,19 @@
       "name": "h2",
       "purl": "pkg:pypi/h2@4.4.0",
       "type": "library",
-      "version": "4.4.0"
+      "version": "4.4.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6acffe1aeab79098d7eb0f8385c1add11f2c7a94815f6fa2b7060eeddee3d87c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:h2-4.4.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "hf-xet==1.5.2",
@@ -667,7 +869,19 @@
       "name": "hf-xet",
       "purl": "pkg:pypi/hf-xet@1.5.2",
       "type": "library",
-      "version": "1.5.2"
+      "version": "1.5.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4a5ecb9cda8512ba2aa8ee5d37c87a1422992165892d653098c7b90247481c3b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:hf_xet-1.5.2-cp314-cp314t-macosx_10_12_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "hpack==4.2.0",
@@ -705,7 +919,19 @@
       "name": "hpack",
       "purl": "pkg:pypi/hpack@4.2.0",
       "type": "library",
-      "version": "4.2.0"
+      "version": "4.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "858ac0b02280fa582b5080d68db0899c62a80375e0e5413a74970c5e518b6986"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:hpack-4.2.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "httpcore==1.0.9",
@@ -738,7 +964,19 @@
       "name": "httpcore",
       "purl": "pkg:pypi/httpcore@1.0.9",
       "type": "library",
-      "version": "1.0.9"
+      "version": "1.0.9",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:httpcore-1.0.9-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "httpx==0.28.1",
@@ -784,11 +1022,21 @@
         {
           "name": "cdx:python:package:required-extra",
           "value": "http2"
+        },
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:httpx-0.28.1-py3-none-any.whl"
         }
       ],
       "purl": "pkg:pypi/httpx@0.28.1",
       "type": "library",
-      "version": "0.28.1"
+      "version": "0.28.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
+        }
+      ]
     },
     {
       "bom-ref": "httpx-sse==0.4.3",
@@ -811,7 +1059,19 @@
       "name": "httpx-sse",
       "purl": "pkg:pypi/httpx-sse@0.4.3",
       "type": "library",
-      "version": "0.4.3"
+      "version": "0.4.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0ac1c9fe3c0afad2e0ebb25a934a59f4c7823b60792691f779fad2c5568830fc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:httpx_sse-0.4.3-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "huggingface_hub==1.25.1",
@@ -840,7 +1100,19 @@
       "name": "huggingface_hub",
       "purl": "pkg:pypi/huggingface-hub@1.25.1",
       "type": "library",
-      "version": "1.25.1"
+      "version": "1.25.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "004d4e70350517e24c68a7dbb7dc5e40b2b6aefef8f94bf7a85f6f9835102ea5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:huggingface_hub-1.25.1-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "hyperframe==6.1.0",
@@ -878,7 +1150,19 @@
       "name": "hyperframe",
       "purl": "pkg:pypi/hyperframe@6.1.0",
       "type": "library",
-      "version": "6.1.0"
+      "version": "6.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b03380493a519fce58ea5af42e4a42317bf9bd425596f7a0835ffce80f1a42e5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:hyperframe-6.1.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "idna==3.18",
@@ -911,7 +1195,19 @@
       "name": "idna",
       "purl": "pkg:pypi/idna@3.18",
       "type": "library",
-      "version": "3.18"
+      "version": "3.18",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:idna-3.18-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "jsonschema==4.26.0",
@@ -964,7 +1260,19 @@
       "name": "jsonschema",
       "purl": "pkg:pypi/jsonschema@4.26.0",
       "type": "library",
-      "version": "4.26.0"
+      "version": "4.26.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:jsonschema-4.26.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "jsonschema-specifications==2025.9.1",
@@ -1012,7 +1320,19 @@
       "name": "jsonschema-specifications",
       "purl": "pkg:pypi/jsonschema-specifications@2025.9.1",
       "type": "library",
-      "version": "2025.9.1"
+      "version": "2025.9.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:jsonschema_specifications-2025.9.1-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "loguru==0.7.3",
@@ -1045,7 +1365,19 @@
       "name": "loguru",
       "purl": "pkg:pypi/loguru@0.7.3",
       "type": "library",
-      "version": "0.7.3"
+      "version": "0.7.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "31a33c10c8e1e10422bfd431aeb5d351c7cf7fa671e3c4df004162264b28220c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:loguru-0.7.3-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "mcp==1.28.1",
@@ -1083,7 +1415,19 @@
       "name": "mcp",
       "purl": "pkg:pypi/mcp@1.28.1",
       "type": "library",
-      "version": "1.28.1"
+      "version": "1.28.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2726bca5e7193f61c5dde8b12500a6de2d9acf6d1a1c0be9e8c2e706437991df"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:mcp-1.28.1-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "mmh3==5.2.1",
@@ -1126,7 +1470,19 @@
       "name": "mmh3",
       "purl": "pkg:pypi/mmh3@5.2.1",
       "type": "library",
-      "version": "5.2.1"
+      "version": "5.2.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5d87a3584093e1a89987e3d36d82c98d9621b2cb944e22a420aa1401e096758f"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:mmh3-5.2.1-cp310-cp310-macosx_10_9_universal2.whl"
+        }
+      ]
     },
     {
       "bom-ref": "numpy==2.5.1",
@@ -1172,7 +1528,19 @@
       "name": "numpy",
       "purl": "pkg:pypi/numpy@2.5.1",
       "type": "library",
-      "version": "2.5.1"
+      "version": "2.5.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2c889b56fe48b1018f764b0eec8df59ab654e9148aa91faa12596043500de277"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:numpy-2.5.1-cp312-cp312-macosx_10_13_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "onnxruntime==1.28.0",
@@ -1200,7 +1568,19 @@
       "name": "onnxruntime",
       "purl": "pkg:pypi/onnxruntime@1.28.0",
       "type": "library",
-      "version": "1.28.0"
+      "version": "1.28.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f5c5daabd28aad610f83fdcf32acec8fb57e6adc6c6a39fe2a3c755db957b410"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:onnxruntime-1.28.0-cp311-cp311-macosx_14_0_arm64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "packaging==26.2",
@@ -1226,7 +1606,19 @@
       "name": "packaging",
       "purl": "pkg:pypi/packaging@26.2",
       "type": "library",
-      "version": "26.2"
+      "version": "26.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:packaging-26.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "pillow==12.3.0",
@@ -1279,7 +1671,19 @@
       "name": "pillow",
       "purl": "pkg:pypi/pillow@12.3.0",
       "type": "library",
-      "version": "12.3.0"
+      "version": "12.3.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6c0016e7b354317c4e9e525b937ac8596c38d2d232b419529b9cd7a1cd46e39a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pillow-12.3.0-cp310-cp310-macosx_10_10_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "portalocker==3.2.0",
@@ -1312,7 +1716,19 @@
       "name": "portalocker",
       "purl": "pkg:pypi/portalocker@3.2.0",
       "type": "library",
-      "version": "3.2.0"
+      "version": "3.2.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3cdc5f565312224bc570c49337bd21428bba0ef363bbcf58b9ef4a9f11779968"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:portalocker-3.2.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "protobuf==7.35.1",
@@ -1326,7 +1742,19 @@
       "name": "protobuf",
       "purl": "pkg:pypi/protobuf@7.35.1",
       "type": "library",
-      "version": "7.35.1"
+      "version": "7.35.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4bc97768d8fe4ad6743c8a19403e314511ed9f6d13205b687e52421c023ac1b9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:protobuf-7.35.1-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "py_rust_stemmers==0.1.8",
@@ -1334,7 +1762,19 @@
       "name": "py_rust_stemmers",
       "purl": "pkg:pypi/py-rust-stemmers@0.1.8",
       "type": "library",
-      "version": "0.1.8"
+      "version": "0.1.8",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "36b952ce65a794faf15553b8f5b60431483c2d5bec00bc6982bf490e727250f9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:py_rust_stemmers-0.1.8-cp310-cp310-macosx_10_12_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "pycparser==3.0",
@@ -1357,7 +1797,19 @@
       "name": "pycparser",
       "purl": "pkg:pypi/pycparser@3.0",
       "type": "library",
-      "version": "3.0"
+      "version": "3.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pycparser-3.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "pydantic==2.13.4",
@@ -1400,7 +1852,19 @@
       "name": "pydantic",
       "purl": "pkg:pypi/pydantic@2.13.4",
       "type": "library",
-      "version": "2.13.4"
+      "version": "2.13.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pydantic-2.13.4-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "pydantic-settings==2.14.2",
@@ -1443,7 +1907,19 @@
       "name": "pydantic-settings",
       "purl": "pkg:pypi/pydantic-settings@2.14.2",
       "type": "library",
-      "version": "2.14.2"
+      "version": "2.14.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a20c97b37910b6550d5ea50fbcc2d4187defe58cd57070b73863d069419c9440"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pydantic_settings-2.14.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "pydantic_core==2.46.4",
@@ -1481,7 +1957,19 @@
       "name": "pydantic_core",
       "purl": "pkg:pypi/pydantic-core@2.46.4",
       "type": "library",
-      "version": "2.46.4"
+      "version": "2.46.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a396dcc17e5a0b164dbe026896245a4fa9ff402edca1dff0be3d53a517f74de4"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:pydantic_core-2.46.4-cp310-cp310-macosx_10_12_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "python-dotenv==1.2.2",
@@ -1504,7 +1992,19 @@
       "name": "python-dotenv",
       "purl": "pkg:pypi/python-dotenv@1.2.2",
       "type": "library",
-      "version": "1.2.2"
+      "version": "1.2.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1d8214789a24de455a8b8bd8ae6fe3c6b69a5e3d64aa8a8e5d68e694bbcb285a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:python_dotenv-1.2.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "python-multipart==0.0.32",
@@ -1542,7 +2042,19 @@
       "name": "python-multipart",
       "purl": "pkg:pypi/python-multipart@0.0.32",
       "type": "library",
-      "version": "0.0.32"
+      "version": "0.0.32",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ff6d3f776f16878c894e52e107296ffc890e913c611b1a4ec6c44e2821fe2e23"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:python_multipart-0.0.32-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "qdrant-client==1.18.0",
@@ -1576,7 +2088,19 @@
       "name": "qdrant-client",
       "purl": "pkg:pypi/qdrant-client@1.18.0",
       "type": "library",
-      "version": "1.18.0"
+      "version": "1.18.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "093aa8cf8a420ee3ad2a68b007e1378d7992b2600e0b53c193fc172674f659cd"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:qdrant_client-1.18.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "referencing==0.37.0",
@@ -1629,7 +2153,19 @@
       "name": "referencing",
       "purl": "pkg:pypi/referencing@0.37.0",
       "type": "library",
-      "version": "0.37.0"
+      "version": "0.37.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:referencing-0.37.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "requests==2.34.2",
@@ -1663,7 +2199,19 @@
       "name": "requests",
       "purl": "pkg:pypi/requests@2.34.2",
       "type": "library",
-      "version": "2.34.2"
+      "version": "2.34.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:requests-2.34.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "rpds-py==2026.6.3",
@@ -1716,7 +2264,19 @@
       "name": "rpds-py",
       "purl": "pkg:pypi/rpds-py@2026.6.3",
       "type": "library",
-      "version": "2026.6.3"
+      "version": "2026.6.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7b689145a1485c335569bd056464f3243a29af7ed3871c7be31ad624ba239bc7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:rpds_py-2026.6.3-cp311-cp311-macosx_10_12_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "sse-starlette==3.4.6",
@@ -1754,7 +2314,19 @@
       "name": "sse-starlette",
       "purl": "pkg:pypi/sse-starlette@3.4.6",
       "type": "library",
-      "version": "3.4.6"
+      "version": "3.4.6",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "56217ab4c9a9f9c5db7b21e08732d3e7c2b807f45231ad23de0551a24c4a41f6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:sse_starlette-3.4.6-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "starlette==1.3.1",
@@ -1797,7 +2369,19 @@
       "name": "starlette",
       "purl": "pkg:pypi/starlette@1.3.1",
       "type": "library",
-      "version": "1.3.1"
+      "version": "1.3.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c7372aae11c3c3f26a42df7bd626cec2f47d03483d261d369516a615a53714c6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:starlette-1.3.1-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "tokenizers==0.23.1",
@@ -1824,7 +2408,19 @@
       "name": "tokenizers",
       "purl": "pkg:pypi/tokenizers@0.23.1",
       "type": "library",
-      "version": "0.23.1"
+      "version": "0.23.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e03d6ffcbe0d56ee9c1ccd070e70a13fa750727c0277e138152acbc0252c2224"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:tokenizers-0.23.1-cp310-abi3-macosx_10_12_x86_64.whl"
+        }
+      ]
     },
     {
       "bom-ref": "tqdm==4.70.0",
@@ -1860,7 +2456,19 @@
       "name": "tqdm",
       "purl": "pkg:pypi/tqdm@4.70.0",
       "type": "library",
-      "version": "4.70.0"
+      "version": "4.70.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7f585706bfddbdebf89daac705b2dfcc16890130727d3197ca62c732b4310953"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:tqdm-4.70.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "typing-inspection==0.4.2",
@@ -1898,7 +2506,19 @@
       "name": "typing-inspection",
       "purl": "pkg:pypi/typing-inspection@0.4.2",
       "type": "library",
-      "version": "0.4.2"
+      "version": "0.4.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:typing_inspection-0.4.2-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "typing_extensions==4.16.0",
@@ -1946,7 +2566,19 @@
       "name": "typing_extensions",
       "purl": "pkg:pypi/typing-extensions@4.16.0",
       "type": "library",
-      "version": "4.16.0"
+      "version": "4.16.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:typing_extensions-4.16.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "urllib3==2.7.0",
@@ -1984,7 +2616,19 @@
       "name": "urllib3",
       "purl": "pkg:pypi/urllib3@2.7.0",
       "type": "library",
-      "version": "2.7.0"
+      "version": "2.7.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:urllib3-2.7.0-py3-none-any.whl"
+        }
+      ]
     },
     {
       "bom-ref": "uvicorn==0.51.0",
@@ -2022,7 +2666,19 @@
       "name": "uvicorn",
       "purl": "pkg:pypi/uvicorn@0.51.0",
       "type": "library",
-      "version": "0.51.0"
+      "version": "0.51.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5d38af6cd620f2ae3849fb44fd4879e0890aa1febe8d47eb355fb45d93fe6a5b"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bulletproof:hash-source",
+          "value": "pypi:uvicorn-0.51.0-py3-none-any.whl"
+        }
+      ]
     }
   ],
   "dependencies": [
